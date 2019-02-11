@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @stack('styles')
+
 </head>
 <body>
     <div id="app">
@@ -76,5 +79,11 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
 </body>
 </html>

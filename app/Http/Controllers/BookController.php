@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -52,16 +53,36 @@ class BookController extends Controller
 
     public function edit(Book $book)
     {
-        //
+        return view('admin.edit', compact('book'));
     }
 
     public function update(Request $request, Book $book)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'year' => 'required'
+        ]);
+
+        $book->title = $request->title;
+        $book->year = $request->year;
+        $book->category = $request->category;
+ 
+        if($request->pdf){
+            $book->pdf = $request->file('pdf')->store('public/2015');  
+        }
+        
+        $book->save();
+
+        return back();
     }
 
     public function destroy(Book $book)
     {
-        return $book;
+        $book->delete();
+
+        $photoPath = str_replace('storage', 'public', $book->pdf);
+        Storage::Delete($photoPath);
+
+        return back();
     }
 }
