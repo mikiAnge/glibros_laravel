@@ -25,60 +25,12 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
+				            <a href="#"><i class="fa fa-file-pdf-o"></i></a>
 				            <h2>Titulo</h2>
                             <p>Tal vez la fecha</p>
 				        </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
-				            <h2>Titulo</h2>
-                            <p>Tal vez la fecha</p>
-				        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
-				            <h2>Titulo</h2>
-                            <p>Tal vez la fecha</p>
-				        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
-				            <h2>Titulo</h2>
-                            <p>Tal vez la fecha</p>
-				        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
-				            <h2>Titulo</h2>
-                            <p>Tal vez la fecha</p>
-				        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
-				            <h2>Titulo</h2>
-                            <p>Tal vez la fecha</p>
-				        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
-				            <h2>Titulo</h2>
-                            <p>Tal vez la fecha</p>
-				        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="services-post">
-				            <a href="{{ route('viewpdf') }}"><i class="fa fa-file-pdf-o"></i></a>
-				            <h2>Titulo</h2>
-                            <p>Tal vez la fecha</p>
-				        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>

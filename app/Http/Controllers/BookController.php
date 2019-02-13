@@ -31,12 +31,14 @@ class BookController extends Controller
         $book = new Book;
         $book->title = $request->title;
         $book->year = $request->year;
+        $book->foul = $request->foul;
         $book->category = $request->category;
+        $book->causal = $request->causal;
         /*
             if ($request->hasFile('pdf'){accion})
         */
         if($request->pdf){
-            $book->pdf = $request->file('pdf')->store('public/2015');  
+            $book->pdf = $request->file('pdf')->store('public/'.$request->foul);  
         }else{
             $book->pdf = 'there is not';
         }
@@ -54,6 +56,15 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         return view('admin.edit', compact('book'));
+    }
+
+    public function listdocu($falta, $cate)
+    {
+        $book = Book::where('foul', 'like','%' . $falta . '%')
+        ->where('category', 'like', '%' . $cate . '%')->get();
+
+        if(count($book)>0)
+        return view('listdocu', compact('book'));
     }
 
     public function update(Request $request, Book $book)

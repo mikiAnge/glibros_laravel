@@ -9,7 +9,6 @@
                     <h1>BIENVENIDO A LA PLATAFORMA <span>VIRTUAL</span></h1>
                     <p>Aqui encontrara todos los documento <br> en formato digital de las resoluciones emitidas <br> por la Magistratura
                     desde el año 2018 hasta la fecha.</p>
-                    <a href="#feature" class="page-scroll btn btn-primary">Leer Mas</a>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@
                     <!-- Start Blog post -->
                     <div class="blog-post">
                         <div class="post-img">
-                            <img src="images/blog/blog-01.jpg" class="img-responsive" alt="Blog image">
+                            <img src="assets/images/blog/blog-01.jpg" class="img-responsive" alt="Blog image">
                         </div>
                         <h1 class="post-title"><a href="#">Nulla facilisi integer lacinia sollicitudin massa</a></h1>
                         

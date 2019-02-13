@@ -61,8 +61,7 @@
                                 <div class="col-md-6">
                                     <!-- Start Contact Info -->
                                     <ul class="contact-details">
-                                        <li><a href="#"><i class="fa fa-user"></i> Admin aquí?</a>
-                                        </li> 
+                                        
                                     </ul>
                                     <!-- End Contact Info -->
                                 </div><!-- .col-md-6 -->
@@ -71,7 +70,29 @@
                                     <!-- Start Social Links -->
                                     <ul class="social-list">
                                         <li>
-                                            <a href="/login"><i class="fa fa-user"></i> Admin?</a>
+                                            @guest
+                                            <a href="/login"><i class="fa fa-user"></i> Administrar</a>
+                                            @else
+                                                <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                                        </a>
+                        
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="{{ route('logout') }}"
+                                                                    onclick="event.preventDefault();
+                                                                            document.getElementById('logout-form').submit();">
+                                                                    Logout
+                                                                </a>
+                        
+                                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                    {{ csrf_field() }}
+                                                                </form>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                @endguest
                                         </li>
                                     </ul>
                                     <!-- End Social Links -->
@@ -95,23 +116,26 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="#">Magistratura</a>
+                        <a class="navbar-brand" href="/">Magistratura</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="#">Inicio</a>
+                                <a class="active" href="/">Inicio</a>
                             </li>
                             <li>
                                 <a>Faltas Leves</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="#">Jurisprudencia</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Personal"]) }}">Personales</a>
                                     </li>
                                     <li>
-                                        <a href="#">Resoluciones</a>
+                                        <a href="#">Al Deber</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">A la Institucion</a>
                                     </li>
                                 </ul>
                             </li>
@@ -119,22 +143,29 @@
                                 <a>Faltas Graves</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="#">Algo malo</a>
+                                        <a href="#">Personales</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Al Deber</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">A la Institucion</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a>Faltas Criticas</a>
+                                <a>Faltas Gravisimas</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="#">Algo diabolico</a>
+                                        <a href="#">Personales</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Al Deber</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">A la Institucion</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li><a href="#">Contact</a>
-                            </li>
-                            <li>
-                                <a href="#">About Us</a>
                             </li>
                         </ul>
                         <!-- End Navigation List -->
@@ -183,19 +214,10 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="copyright">
-                            Copyright © 2014. All Rights Reserved.Design and Developed by <a href="http://www.themefisher.com">Themefisher</a>
+                            Copyright © 2019. All Rights Reserved.Design and Developed by Albert and Miki
                         </div>
                     </div>
                     
-                    <div class="col-md-5">
-                        <div class="copyright-menu pull-right">
-                            <ul>
-                                <li><a href="#" class="active">Home</a></li>
-                                <li><a href="#">Sample Site</a></li>
-                                <li><a href="#">getbootstrap.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div><!--/.row -->
             </div><!-- /.container -->
         </div>
