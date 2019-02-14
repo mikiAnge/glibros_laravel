@@ -60,11 +60,18 @@ class BookController extends Controller
 
     public function listdocu($falta, $cate)
     {
+
         $book = Book::where('foul', 'like','%' . $falta . '%')
         ->where('category', 'like', '%' . $cate . '%')->get();
+        $titu = $falta.'--'.$cate;
 
-        if(count($book)>0)
-        return view('listdocu', compact('book'));
+        
+        return view('listdocu', compact('book','titu'));
+    }
+
+    public function viewpdf(Book $book)
+    {
+        return view('viewpdf')->with('book', $book);
     }
 
     public function update(Request $request, Book $book)

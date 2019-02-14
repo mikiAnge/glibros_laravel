@@ -17,49 +17,144 @@
                     <input type="date" name="year" class="form-control">
                     {!! $errors->first('year', '<span class="help-block">:message</span>') !!}
                 </div>
-
+                <!-- radio de las faltas -->
                 <div class="form-group">
-                    <label>Tipo de Falta</label>
-                    <select class="form-control" name="foul">
-                        <option>Leves</option>
-                        <option>Graves</option>
-                        <option>Gravisimas</option>
-                    </select>
+                    <label>Tipo de Falta</label><br>
+                    <input type="radio" name="foul" value="Leves" onclick="botonfalta(1)"> Leves  |
+                    <input type="radio" name="foul" value="Graves" onclick="botonfalta(2)"> Graves  |
+                    <input type="radio" name="foul" value="Gravisimas" onclick="botonfalta(3)"> Gravisimas
+                </div>
+                <!--fin radio de las faltas -->
+
+                <!-- radio de las categorias -->
+                <div class="form-group" id="rd1" style="display:none">
+                    <label>Categoria</label><br>
+                    <input type="radio" name="category" value="Personal" onclick="botoncategoria(1)"> Personal  |
+                    <input type="radio" name="category" value="Al deber" onclick="botoncategoria(2)"> Al deber  |
+                    <input type="radio" name="category" value="A la institucion" onclick="botoncategoria(3)"> A la institucion
                 </div>
 
-                <div class="form-group">
-                    <label>Categoria</label>
-                    <select class="form-control" name="category">
-                        <option>Personal</option>
-                        <option>Al deber</option>
-                        <option>A la institucion</option>
-                    </select>
+                <div class="form-group" id="rd2" style="display:none">
+                    <label>Categoria</label><br>
+                    <input type="radio" name="category" value="Personal" onclick="botoncategoria(4)"> Personal  |
+                    <input type="radio" name="category" value="Al deber" onclick="botoncategoria(5)"> Al deber  |
+                    <input type="radio" name="category" value="A la institucion" onclick="botoncategoria(6)"> A la institucion
                 </div>
-                <!-- Los ifs modificar las categorias -->
-                <div class="form-group">
+
+                <div class="form-group" id="rd3" style="display:none">
+                    <label>Categoria</label><br>
+                    <input type="radio" name="category" value="Personal" onclick="botoncategoria(7)"> Personal  |
+                    <input type="radio" name="category" value="Al deber" onclick="botoncategoria(8)"> Al deber  |
+                    <input type="radio" name="category" value="A la institucion" onclick="botoncategoria(9)"> A la institucion
+                </div>
+                <!-- fin radio de las categorias -->   
+             
+                <!-- Los grids aparecen al click del radio, modificar las categorias 1111111111111 -->
+                <div class="form-group" id="sl1" style="display:none">
                 <label>Tipo de Causal</label>
                 <select class="form-control" name="causal">
-                    @if ('foul' === "Leves")
-                        @if ('category' === "Personal")
-                                <option>category 1</option>
-                                <option>category 2</option>
-                                <option>category 3</option>
-                        @elseif ('category' === 'Al deber')
-                                <option>category 4</option>
-                                <option>category 5</option>
-                                <option>category 6</option>
-                        @else
-                                <option>category 7</option>
-                                <option>category 8</option>
-                                <option>category 9</option>
-                        @endif
-                    @else
-                        <option>category 7</option>
-                        <option>category 8</option>
-                        <option>category 9</option>
-                    @endif
+                    
+                    <option>Out 1</option>
+                    <option>category 2</option>
+                    <option>category 3</option>
+                        
                 </select>
-                </div> 
+                </div>
+
+                <div class="form-group" id="sl2" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>Out 4</option>
+                    <option>out 5</option>
+                    <option>category 6</option>
+                        
+                </select>
+                </div>
+
+                <div class="form-group" id="sl3" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>Out 7</option>
+                    <option>category 8</option>
+                    <option>category 9</option>
+                        
+                </select>
+                </div>
+
+                <!--Fin de los grids -->
+
+                <!-- Los grids aparecen al click del radio, modificar las categorias 222222222222-->
+                <div class="form-group" id="sl4" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>sad 1</option>
+                    <option>category 2</option>
+                    <option>category 3</option>
+                        
+                </select>
+                </div>
+
+                <div class="form-group" id="sl5" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>df 4</option>
+                    <option>out 5</option>
+                    <option>category 6</option>
+                        
+                </select>
+                </div>
+
+                <div class="form-group" id="sl6" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>af 7</option>
+                    <option>category 8</option>
+                    <option>category 9</option>
+                        
+                </select>
+                </div>
+
+                <!--Fin de los grids -->
+                <!-- Los grids aparecen al click del radio, modificar las categorias 333333333333-->
+                <div class="form-group" id="sl7" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>ewr 1</option>
+                    <option>category 2</option>
+                    <option>category 3</option>
+                        
+                </select>
+                </div>
+
+                <div class="form-group" id="sl8" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>fgh 4</option>
+                    <option>out 5</option>
+                    <option>category 6</option>
+                        
+                </select>
+                </div>
+
+                <div class="form-group" id="sl9" style="display:none">
+                <label>Tipo de Causal</label>
+                <select class="form-control" name="causal">
+                    
+                    <option>jkl 7</option>
+                    <option>category 8</option>
+                    <option>category 9</option>
+                        
+                </select>
+                </div>
+
+                <!--Fin de los grids -->
 
                 <div class="form-group {{$errors->has('pdf') ? 'has-error' : ''}}">
                     <label>Subir pdf</label>

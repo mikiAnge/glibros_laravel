@@ -132,10 +132,10 @@
                                         <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Personal"]) }}">Personales</a>
                                     </li>
                                     <li>
-                                        <a href="#">Al Deber</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Al Deber"]) }}">Al Deber</a>
                                     </li>
                                     <li>
-                                        <a href="#">A la Institucion</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "A la Institucion"]) }}">A la Institucion</a>
                                     </li>
                                 </ul>
                             </li>
@@ -143,13 +143,13 @@
                                 <a>Faltas Graves</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="#">Personales</a>
+                                        <a href="{{ route('listdocu', [$falta = "Graves", $cate = "Personal"]) }}">Personales</a>
                                     </li>
                                     <li>
-                                        <a href="#">Al Deber</a>
+                                        <a href="{{ route('listdocu', [$falta = "Graves", $cate = "Al Deber"]) }}">Al Deber</a>
                                     </li>
                                     <li>
-                                        <a href="#">A la Institucion</a>
+                                        <a href="{{ route('listdocu', [$falta = "Graves", $cate = "A la Institucion"]) }}">A la Institucion</a>
                                     </li>
                                 </ul>
                             </li>
@@ -157,13 +157,13 @@
                                 <a>Faltas Gravisimas</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="#">Personales</a>
+                                        <a href="{{ route('listdocu', [$falta = "Gravisimas", $cate = "Personal"]) }}">Personales</a>
                                     </li>
                                     <li>
-                                        <a href="#">Al Deber</a>
+                                        <a href="{{ route('listdocu', [$falta = "Gravisimas", $cate = "Al Deber"]) }}">Al Deber</a>
                                     </li>
                                     <li>
-                                        <a href="#">A la Institucion</a>
+                                        <a href="{{ route('listdocu', [$falta = "Gravisimas", $cate = "A la Institucion"]) }}">A la Institucion</a>
                                     </li>
                                 </ul>
                             </li>

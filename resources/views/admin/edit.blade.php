@@ -13,15 +13,15 @@
                     </div>
                     <div class="form-group {{$errors->has('year') ? 'has-error' : ''}}">
                         <label>Year</label>
-                        <input type="int" name="year" value="{{ $book->year }}" class="form-control">
+                        <input type="date" name="year" value="{{ $book->year }}" class="form-control">
                         {!! $errors->first('year', '<span class="help-block">:message</span>') !!}
                     </div>
                     <div class="form-group">
                         <label>Category</label>
-                        <select class="form-control" name="category" value="{{ $book->category }}">
-                            <option>category 1</option>
-                            <option>category 2</option>
-                            <option>category 3</option>
+                        <select class="form-control" name="category">
+                            <option>Personal</option>
+                            <option>Al deber</option>
+                            <option>A la institucion</option>
                         </select>
                     </div>
                     <div class="form-group {{$errors->has('pdf') ? 'has-error' : ''}}">

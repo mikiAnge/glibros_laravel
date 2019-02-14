@@ -79,6 +79,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/botones.js') }}"
     @stack('scripts')
     <script>
         $(document).ready(function() {

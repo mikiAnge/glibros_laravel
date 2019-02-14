@@ -20,9 +20,7 @@ Route::get('/', function () {
 });*/
 Route::get('listdocu/{falta}/{cate}','BookController@listdocu')->name('listdocu');
 
-Route::get('/viewpdf', function () {
-    return view('viewpdf');
-});
+Route::get('viewpdf/{book}','BookController@viewpdf')->name('viewpdf');
 
 /*Route::get('/listdoc2', function () {
     return view('welcome');
