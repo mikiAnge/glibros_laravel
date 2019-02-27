@@ -12,7 +12,7 @@
 */
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 
 /*Route::get('/listdocu', function () {
@@ -25,6 +25,8 @@ Route::get('viewpdf/{book}','BookController@viewpdf')->name('viewpdf');
 /*Route::get('/listdoc2', function () {
     return view('welcome');
 });*/
+
+Route::match(['get', 'post'], '/busqueda', 'SearchController@index')->name('buscar');
 
 Auth::routes();
 

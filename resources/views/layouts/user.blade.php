@@ -7,7 +7,7 @@
 
         <!-- Basic -->
         <title>Magis | @yield('title')</title>
-
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logo/icono.ico') }}">
         <!-- Define Charset -->
         <meta charset="utf-8">
 
@@ -59,41 +59,53 @@
                             <div class="row">
                                     
                                 <div class="col-md-6">
-                                    <!-- Start Contact Info -->
+                                    <!-- Start buscador -->
                                     <ul class="contact-details">
-                                        
+                                        <li>
+                                            <form action="{{ route('buscar') }}" method="POST" role="search">
+                                                {{ csrf_field() }}
+                                                <input class="buscar" type="search" name="search" placeholder="¿Qué deseas buscar?">
+                                                <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-search">buscar</i>
+                                                </button>
+                                            </form>
+                                        </li>
                                     </ul>
-                                    <!-- End Contact Info -->
+                                    <!-- End buscador -->
                                 </div><!-- .col-md-6 -->
                                 
                                 <div class="col-md-6">
                                     <!-- Start Social Links -->
                                     <ul class="social-list">
                                         <li>
-                                            @guest
-                                            <a href="/login"><i class="fa fa-user"></i> Administrar</a>
-                                            @else
-                                                <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                                        </a>
-                        
-                                                        <ul class="dropdown-menu">
-                                                            <li>
-                                                                <a href="{{ route('logout') }}"
-                                                                    onclick="event.preventDefault();
-                                                                            document.getElementById('logout-form').submit();">
-                                                                    Logout
-                                                                </a>
-                        
-                                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                                    {{ csrf_field() }}
-                                                                </form>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                @endguest
-                                        </li>
+                                                @guest
+                                                <a href="{{ route('login') }}"><i class="fa fa-user"></i> Administrar</a>
+                                                @else
+                                                    <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                                            </a>
+                            
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="{{ route('book.store') }}">
+                                                                        Administrador
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="{{ route('logout') }}"
+                                                                        onclick="event.preventDefault();
+                                                                                document.getElementById('logout-form').submit();">
+                                                                        Logout
+                                                                    </a>
+                            
+                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                                        {{ csrf_field() }}
+                                                                    </form>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    @endguest
+                                            </li>
                                     </ul>
                                     <!-- End Social Links -->
                                 </div><!-- .col-md-6 -->
@@ -115,18 +127,22 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <!-- End Toggle Nav Link For Mobiles -->
+                        <!-- End Toggle Nav Link For Mobiles 
                         <a class="navbar-brand" href="/">Magistratura</a>
+                        -->
+                        <a href="{{ route('index') }}" title="A la ventana principal">
+                        <img src="{{ asset('assets/images/logo/logo.png') }}" style="max-width:100%;width:200px;height:66px;">
+                        </a>
                     </div>
                     <div class="navbar-collapse collapse">
                         
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a class="active" href="/">Inicio</a>
+                                <a class="active" href="{{ route('index') }}">Inicio</a>
                             </li>
                             <li>
-                                <a>Faltas Leves</a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Faltas Leves</a>
                                 <ul class="dropdown">
                                     <li>
                                         <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Personal"]) }}">Personales</a>

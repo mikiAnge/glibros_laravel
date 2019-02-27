@@ -38,7 +38,7 @@ class BookController extends Controller
             if ($request->hasFile('pdf'){accion})
         */
         if($request->pdf){
-            $book->pdf = $request->file('pdf')->store('public/'.$request->foul);  
+            $book->pdf = $request->file('pdf')->store($request->foul);  
         }else{
             $book->pdf = 'there is not';
         }
@@ -62,7 +62,7 @@ class BookController extends Controller
     {
 
         $book = Book::where('foul', 'like','%' . $falta . '%')
-        ->where('category', 'like', '%' . $cate . '%')->get();
+        ->where('category', 'like', '%' . $cate . '%')->paginate(9);
         $titu = $falta.'--'.$cate;
 
         
@@ -76,6 +76,7 @@ class BookController extends Controller
 
     public function update(Request $request, Book $book)
     {
+        return $request;
         $this->validate($request, [
             'title' => 'required',
             'year' => 'required'
@@ -83,7 +84,9 @@ class BookController extends Controller
 
         $book->title = $request->title;
         $book->year = $request->year;
+        $book->foul = $request->foul;
         $book->category = $request->category;
+        $book->causal = $request->causal;
  
         if($request->pdf){
             $book->pdf = $request->file('pdf')->store('public/2015');  
@@ -98,8 +101,8 @@ class BookController extends Controller
     {
         $book->delete();
 
-        $photoPath = str_replace('storage', 'public', $book->pdf);
-        Storage::Delete($photoPath);
+        //$photoPath = str_replace('storage', 'public', $book->pdf);
+        Storage::Delete($book->pdf);
 
         return back();
     }

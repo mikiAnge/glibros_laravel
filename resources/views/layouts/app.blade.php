@@ -8,13 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <!-- Basic -->
+    <title>Magis | @yield('title')</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logo/icono.ico') }}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     @stack('styles')
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 </head>
 <body>
     <div id="app">
@@ -31,8 +32,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="{{ route('index') }}">
+                        {{ config('app.name', 'Magistratura') }}
                     </a>
                 </div>
 
@@ -47,8 +48,9 @@
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+
+                            <li><a href="{{ route('register') }}">Register</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -79,12 +81,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('assets/js/botones.js') }}"
-    @stack('scripts')
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        } );
-    </script>
+
+    @stack('scripts');
+    <script src="{{ asset('assets/datatable/js/jquery-3.3.1.js') }}"></script>
+    <script src="{{ asset('assets/jquery-options/options.js') }}"></script>
 </body>
 </html>

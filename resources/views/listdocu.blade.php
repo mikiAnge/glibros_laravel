@@ -23,13 +23,13 @@
     <section id="service-section">
             <div class="container">
                 <div class="row">
-                    @foreach ($book as $book)
+                    @foreach ($book as $books)
                         <div class="col-md-3">
                             <div class="services-post">
-                                <a href="{{ route('viewpdf', $book->id) }}"><i class="fa fa-file-pdf-o"></i></a>
-                                <h2>{{ $book->title }}</h2>
-                                <p>{{ $book->category }}--{{ $book->causal }}</p>
-                                <p>{{ $book->year }}</p>
+                                <a href="{{ route('viewpdf', $books->id) }}"><i class="fa fa-file-pdf-o"></i></a>
+                                <h2>{{ $books->title }}</h2>
+                                <p>{{ $books->category }}--{{ $books->causal }}</p>
+                                <p>{{ $books->year }}</p>
                             </div>
                         </div>
 
@@ -41,15 +41,9 @@
         <!-- Start Service Section -->
     
     <!-- Start Pagination -->
-    <nav>
-        <ul class="pagination">
-            <li class="disabled"><a href="#" aria-label="Start">Start</a></li>
-            <li class="disabled"><a href="#" aria-label="Previous">Prev</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">Next</a></li>
-            <li><a href="#">End</a></li>
-        </ul>
-    </nav>
+    
+    <div class="pagination">
+        {{ $book->links('vendor.pagination.bootstrap-4') }}
+    </div>
     <!-- End Pagination -->
 @endsection     

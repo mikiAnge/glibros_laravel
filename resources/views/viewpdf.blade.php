@@ -31,34 +31,16 @@
                         
                         <ul class="post-meta">
 							<li><i class="fa fa-clock-o"></i>{{ $book->year }} |</li>
-                            <li><i class="fa fa-download"></i><a href="{{ Storage::url($book->pdf) }}" download="{{ $book->title }}">Descargar |</a></li>
-							<li><i class="fa fa-eye"></i><a href="{{ Storage::url($book->pdf) }}" target="_blank"><i class="ion-android-archive"></i>Ver en pantalla completa</a></li>
+                            <li><i class="fa fa-download"></i><a href="{{ asset('books/'.$book->pdf) }}" download="{{ $book->title }}">Descargar |</a></li>
+							<li><i class="fa fa-eye"></i><a href="{{ asset('books/'.$book->pdf) }}" target="_blank"><i class="ion-android-archive"></i>Ver en pantalla completa</a></li>
 						</ul>
                         
-                        <embed src="{{ Storage::url($book->pdf) }}" type="application/pdf"  width="750" height="800"></embed>
+                        <embed src="{{ asset('books/'.$book->pdf) }}" type="application/pdf"  width="1100" height="800"></embed>
 
                     </div>
                     <!-- End Blog Post -->
                 </div>
                 <!-- End Blog Body Section -->
-                
-                <!-- Start Sidebar Section -->
-                <div class="col-md-4 sidebar right-sidebar">
-                    
-                    
-                    <!-- Start botones extras -->
-                    <div class="widget flickr-widget">
-                        
-                        <div class="section-heading-2">
-                            <h3 class="section-title">
-                                <span>Flickr Stream</span>
-                            </h3><br>
-                            <a href="#" class="btn btn-primary readmore">Read more...<i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- End botones extras -->
-                </div>
-                <!-- End Sidebar Section -->
                 
             </div>
         </div>
