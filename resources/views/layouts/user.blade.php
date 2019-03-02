@@ -256,6 +256,7 @@
         <script src="{{ asset('assets/js/map.js') }}"></script>
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="{{ asset('assets/js/script.js') }}"></script> 
+        <script src="{{ asset('assets/jquery-options/options_user.js') }}"></script> 
         
     
     </body>

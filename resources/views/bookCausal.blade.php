@@ -43,7 +43,8 @@
         <div class="container">
             <div class="alert alert-warning alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong>!Lo sentimos!</strong><br> {{ $message }}
+                <strong>!Lo sentimos! No hay Resultados!!!</strong><br>
+                <strong>(╥_╥)</strong>
             </div>
         </div>
     @endif
@@ -51,4 +52,5 @@
     </section>
     <!-- end contenido Section -->
     
-@endsection
+    
+@endsection     

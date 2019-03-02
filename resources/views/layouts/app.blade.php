@@ -33,7 +33,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ route('index') }}">
-                        {{ config('app.name', 'Magistratura') }}
+                        Magistratura
                     </a>
                 </div>
 

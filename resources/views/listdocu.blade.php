@@ -15,9 +15,21 @@
     </div>
     <!-- End Header Section -->
     
-    
-    
-    
+    <!-- sector de grill-->
+    <div class="container">
+        <div class="col-md-6">
+            <form method="get" action="{{ route('search.causal') }}">
+                {{ csrf_field() }}
+                <input type="hidden" id="foul" name="foul" value="{{ $falta }}">
+                <input type="hidden" id="category" name="category" value="{{ $cate }}">
+              <div class="form-group row">
+                @include('layouts.options')
+                <button class="btn btn-danger" type="submit">Filtrar</button>
+              </div>
+            </form>
+        </div>
+    </div>
+    <!-- end sector grill-->
     
     <!-- Start Service Section -->
     <section id="service-section">
