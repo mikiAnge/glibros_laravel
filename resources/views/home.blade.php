@@ -33,9 +33,8 @@
                 <div class="form-group">
                     <label>Categoria</label><br>
                     <select name="category" class="form-control">
-                        <option>Al deber</option>
-                        <option>Personal</option>
-                        <option>A la institucion</option>
+                        <option>Jurisprudencia</option>
+                        <option>Resoluciones</option>
                     </select>
                 </div>
              

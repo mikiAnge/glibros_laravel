@@ -145,13 +145,10 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Faltas Leves</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Personal"]) }}">Personales</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Jurisprudencia"]) }}">Jurisprudencia</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Al Deber"]) }}">Al Deber</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "A la Institucion"]) }}">A la Institucion</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Resoluciones"]) }}">Resoluciones</a>
                                     </li>
                                 </ul>
                             </li>
@@ -159,13 +156,10 @@
                                 <a>Faltas Graves</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="{{ route('listdocu', [$falta = "Graves", $cate = "Personal"]) }}">Personales</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Jurisprudencia"]) }}">Jurisprudencia</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('listdocu', [$falta = "Graves", $cate = "Al Deber"]) }}">Al Deber</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('listdocu', [$falta = "Graves", $cate = "A la Institucion"]) }}">A la Institucion</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Resoluciones"]) }}">Resoluciones</a>
                                     </li>
                                 </ul>
                             </li>
@@ -173,13 +167,10 @@
                                 <a>Faltas Gravisimas</a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a href="{{ route('listdocu', [$falta = "Gravisimas", $cate = "Personal"]) }}">Personales</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Jurisprudencia"]) }}">Jurisprudencia</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('listdocu', [$falta = "Gravisimas", $cate = "Al Deber"]) }}">Al Deber</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('listdocu', [$falta = "Gravisimas", $cate = "A la Institucion"]) }}">A la Institucion</a>
+                                        <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Resoluciones"]) }}">Resoluciones</a>
                                     </li>
                                 </ul>
                             </li>
