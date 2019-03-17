@@ -171,7 +171,7 @@
                                     </li>
                                     <li>
                                         <a href="{{ route('listdocu', [$falta = "Leves", $cate = "Resoluciones"]) }}">Resoluciones</a>
-                                    </li>
+                                    </li> 
                                 </ul>
                             </li>
                         </ul>

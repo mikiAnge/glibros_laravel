@@ -34,7 +34,7 @@
                     <label>Categoria</label><br>
                     <select name="category" class="form-control">
                         <option>Jurisprudencia</option>
-                        <option>Resoluciones</option>
+                        <option>Resoluciones</option> 
                     </select>
                 </div>
              
