@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
@@ -66,7 +67,7 @@ class BookController extends Controller
         $titu = $falta.'--'.$cate;
 
         
-        return view('listdocu', compact('book','titu'));
+        return view('listdocu', compact('book','titu', 'falta', 'cate'));
     }
 
     public function viewpdf(Book $book)
@@ -105,5 +106,19 @@ class BookController extends Controller
         Storage::Delete($book->pdf);
 
         return back();
+    }
+
+    public function searchCausal()
+    {
+        $causal = Input::get('causal');
+        if($causal){
+            $book = Book::where('causal', 'LIKE', "%$causal%")->paginate(9);
+            if(count($book) > 0){
+                $message = false;
+                return view('bookCausal', compact('book', 'message'));
+            }
+            $message = true;
+            return view('bookCausal', compact('message'));
+        }        
     }
 }

@@ -18,6 +18,6 @@ class SearchController extends Controller
                 return view('buscar')->withDetails($book)->withQuery($search);
         }
 
-        return view('buscar')->withMessage("No encontramos lo que estas buscando");
+        return view('buscar')->withMessage("No encontramos lo que estas buscando. ╥﹏╥");
     }
 }

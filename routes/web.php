@@ -26,6 +26,8 @@ Route::get('viewpdf/{book}','BookController@viewpdf')->name('viewpdf');
     return view('welcome');
 });*/
 
+Route::get('search', 'BookController@searchCausal')->name('search.causal');
+
 Route::match(['get', 'post'], '/busqueda', 'SearchController@index')->name('buscar');
 
 Auth::routes();
